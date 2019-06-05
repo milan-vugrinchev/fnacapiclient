@@ -12,34 +12,31 @@ You will also need to have composer installed on your host.
 Simply clone the project into a private directory:  
 /!\ Important /!\ if you use symfony 2.8 please use the version tagged v2.0
 
-```shell
-git clone https://github.com/FnacMarketplace/fnacapiclient.git
+Edit composer.json in your project and add:
+```json
+
+"repositories": [
+	{
+		"type": "vcs",
+		"url" : "https://github.com/milan-vugrinchev/fnacapiclient"
+	}
+]
+
 ```
 
-And launch the installation
+then use the command
 
 ```shell
-composer install
+composer require milan-vugrinchev/fnacapiclient
 ```
-
-or with
-
-```shell
-php composer.phar install
-```
-
-Or download and extract the archive in that directory (https://marketplace.ws.fd-recette.net/docs/api/2.6/download/fnacapiclient.tgz)
 
 ## Configuration
 
-Edit the config.yml file, and fill it in with your seller account test or production ids given by Fnac teams.
-
-```shell
-vi config/config.yml
-```
+Edit the config/config.yml file, and fill it in with your seller account test or production ids given by Fnac teams.
 
 You should be provided with 3 ids: partner_id, shop_id and key. As it is an .yml file, be careful on the indentation.
 Here is an example:
+
 ```yaml
 fnac_api_client:
   partner_id: 509490E8-7341-AE98-F708-11768C65539B
@@ -49,6 +46,23 @@ fnac_api_client:
 ```
 
 You are now ready to go.
+
+## Usage
+
+```php
+
+<?php
+
+  use FnacApiClient\Client\SimpleClient;
+
+  $client = new SimpleClient();
+  $client->init(__DIR__.'/config/config.yml');
+
+  echo $v->output($client);
+
+?>
+
+```
 
 ## Features
 
@@ -75,3 +89,8 @@ branch. Any helping suggestions and pull requests are warmly welcome.
 ## Licensing
 
 The code in this project is licensed under MIT license.
+
+## Original Repository
+https://github.com/FnacMarketplace/fnacapiclient
+
+I edited this to be able to use as library for any SDK/Module you want.
