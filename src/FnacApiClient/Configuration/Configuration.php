@@ -9,7 +9,6 @@
 
 namespace FnacApiClient\Configuration;
 
-use Symfony\Component\Yaml\Yaml;
 use FnacApiClient\Exception\FileNotFoundException;
 
 /**
@@ -68,11 +67,12 @@ class Configuration implements \ArrayAccess
     public function __construct($config_path)
     {
         $this->config_path = $config_path;
-        $this->config = Yaml::parse($this->config_path);
 
-        if ($this->config === $this->config_path) {
+        if (!file_exists($this->config_path)) {
             throw new FileNotFoundException(sprintf("The file at %s does not exist", $config_path));
         }
+
+        $this->config = include($this->config_path);
 
         $config_client = $this->config[self::CLIENT_CONFIG];
 

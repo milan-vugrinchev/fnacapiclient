@@ -25,7 +25,7 @@
 	{
 		"psr-4":
 		{
-			"Vugrinchev\\FnacApiClient\\": "src/FnacApiClient/"
+			"FnacApiClient\\": "src/FnacApiClient/"
 		}
 	}
 }
