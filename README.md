@@ -14,14 +14,14 @@ Simply clone the project into a private directory:
 
 Edit composer.json in your project and add:
 ```json
-
+...
 "repositories": [
 	{
 		"type": "vcs",
 		"url" : "https://github.com/milan-vugrinchev/fnacapiclient"
 	}
 ]
-
+...
 ```
 
 then use the command
