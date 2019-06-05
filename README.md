@@ -73,18 +73,10 @@ The Fnac Marketplace PHP Client offers methods to call the available services su
 * Manage claims on orders and eventually refund them
 * Retrieve the best prices among the competition
 
-This client is shipped with a graphical user interface. Once your ids properly added in the config.yml file, you can open it in your browser at http://yourhost.com/your_project/index.php
-
 ## Documentation
 
 The documentation of our API and a complete how-to-use guide is available on Fnac Marketplace API test sandbox here: https://marketplace.ws.fd-recette.net/docs/api/2.6/index.html
 You will need to get your access by demanding it from the Fnac Marketplace commercial support. 
-
-## Contributing
-
-This library is already used as is by many Fnac Marketplace vendors, but it can now be improved by anyone.
-If you'd like to contribute, please fork the repository and use a feature
-branch. Any helping suggestions and pull requests are warmly welcome.
 
 ## Licensing
 
@@ -93,4 +85,4 @@ The code in this project is licensed under MIT license.
 ## Original Repository
 https://github.com/FnacMarketplace/fnacapiclient
 
-I edited this to be able to use as library for any SDK/Module you want.
+I edited this to be able to use as composer package.
