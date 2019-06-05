@@ -1,4 +1,16 @@
 {
+    "name": "milan-vugrinchev/fnacapiclient",
+	"description": "PHP library to query and send API requests to fnac api",
+	"homepage": "https://github.com/FnacMarketplace/fnacapiclient",
+	"type": "library",
+	"license": "LGPL-2.1",
+	"authors":
+	[
+		{
+			"name": "Milan Vugrinchev",
+			"email": "milan.vugrinchev@gmail.com"
+		}
+	],
     "require": {
         "zendframework/zend-http" : "2.3.2",
         "zendframework/zend-uri" : "2.3.2",
@@ -11,5 +23,12 @@
         "symfony/yaml" : "2.0.*",
         "twbs/bootstrap": "^3.3",
         "components/jquery": "^2.2"
-    }
+    },
+	"autoload":
+	{
+		"psr-4":
+		{
+			"Vugrinchev\\FnacApiClient\\": "src/FnacApiClient/"
+		}
+	}
 }
